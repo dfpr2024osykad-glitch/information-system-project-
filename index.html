@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOutsource Tracker — Дашборд</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <h2 class="brand-title">DOT_</h2>
+        <nav class="nav-menu">
+          <a href="#" class="nav-item active">Головна</a>
+        </nav>
+      </div>
+      <div class="user-profile">
+        <span class="user-name">Дмитро О.</span>
+        <span class="user-role">Backend Developer</span>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="top-header">
+        <h1>DevOutsource Tracker</h1>
+      </header>
+
+      <main class="content-area">
+        <section class="section-container">
+          <h2 class="section-title">Особиста статистика</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-label">Активні проєкти</span>
+              <div class="stat-value" id="statProjects">2</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Всього завдань</span>
+              <div class="stat-value" id="statTotal">4</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-container">
+          <h2 class="section-title">Поточні завдання</h2>
+          <div class="controls-bar">
+            <input type="text" id="searchInput" class="ui-input" placeholder="Пошук за назвою...">
+            <select id="projectFilter" class="ui-select">
+              <option value="all">Усі проєкти</option>
+              <option value="E-Commerce API">E-Commerce API</option>
+              <option value="FinTech Core">FinTech Core</option>
+            </select>
+            <button id="btnSearch" class="btn-primary">Знайти</button>
+            <span id="taskMessage" class="sys-message"></span>
+          </div>
+
+          <div class="table-card">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Код</th>
+                  <th>Назва завдання</th>
+                  <th>Проєкт</th>
+                  <th>Статус</th>
+                </tr>
+              </thead>
+              <tbody id="tasksList">
+                <!-- Дані генеруються через app.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

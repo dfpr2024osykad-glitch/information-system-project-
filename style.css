@@ -1,0 +1,106 @@
+:root {
+  --bg-primary: #0a0c10;
+  --bg-surface: #151b26;
+  --border-color: #242e42;
+  --color-cyan: #00f0ff;
+  --color-text-main: #e2e8f0;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-ui: 'Rajdhani', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--color-text-main);
+  font-family: var(--font-ui);
+  font-size: 16px;
+}
+
+.app-layout { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 240px;
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-color);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand-title { color: var(--color-cyan); font-family: var(--font-mono); margin-bottom: 24px;}
+.nav-item { display: block; color: var(--color-cyan); text-decoration: none; padding: 10px 0; }
+.user-name { display: block; font-weight: bold; }
+.user-role { font-size: 0.85rem; color: #8492a6; }
+
+.main-wrapper { flex-grow: 1; display: flex; flex-direction: column; }
+.top-header { padding: 20px 40px; border-bottom: 1px solid var(--border-color); }
+.content-area { padding: 32px 40px; display: flex; flex-direction: column; gap: 24px; }
+
+.stats-grid { display: flex; gap: 16px; }
+.stat-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 4px;
+  flex: 1;
+}
+.stat-value { font-size: 2rem; font-family: var(--font-mono); font-weight: bold; color: var(--color-cyan); }
+
+.controls-bar { display: flex; gap: 10px; margin-bottom: 16px; align-items: center; }
+.ui-input, .ui-select {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--color-text-main);
+  padding: 8px 12px;
+  border-radius: 2px;
+}
+.btn-primary {
+  background: var(--color-cyan);
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.data-table { width: 100%; border-collapse: collapse; text-align: left; }
+.data-table th, .data-table td { padding: 12px; border-bottom: 1px solid var(--border-color); }
+.data-table th { font-family: var(--font-mono); color: #8492a6; text-transform: uppercase; }
+.status-badge { background: rgba(0, 240, 255, 0.1); color: var(--color-cyan); padding: 4px 8px; border-radius: 2px; font-size: 0.85rem; }
+
+
+/* Зміна 1: Ефект наведення на рядки таблиці (інтерактивність) */
+.data-table tbody tr { 
+    transition: background-color 0.2s ease, transform 0.2s ease; 
+}
+.data-table tbody tr:hover { 
+    background-color: #1c2433; 
+    transform: translateX(4px); 
+    box-shadow: inset 3px 0 0 var(--color-cyan); 
+}
+
+/* Зміна 2: Динамічні кольори статусів */
+.status-badge { 
+    padding: 4px 8px; 
+    border-radius: 2px; 
+    font-size: 0.85rem; 
+    font-family: var(--font-mono); 
+    font-weight: bold;
+}
+.status-progress { 
+    background: rgba(251, 191, 36, 0.1); 
+    color: #fbbf24; 
+    border: 1px solid rgba(251, 191, 36, 0.3); 
+}
+.status-review { 
+    background: rgba(157, 78, 221, 0.1); 
+    color: #9d4edd; 
+    border: 1px solid rgba(157, 78, 221, 0.3); 
+}
+.status-done { 
+    background: rgba(52, 211, 153, 0.1); 
+    color: #34d399; 
+    border: 1px solid rgba(52, 211, 153, 0.3); 
+}
